@@ -55,6 +55,9 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name, url: profile.linkedin }],
   creator: profile.name,
   publisher: profile.name,
+    verification: {
+    google: "R0_tpfMGpYmfz8GCNpfiMvecCtPz-NKVOxWaW2WObJA",
+  },
   keywords: [
     "Nallamothu Srinath",
     "Srinath portfolio",
