@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nallamothu Srinath — Résumé</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #14171f;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 8.4pt;
+        line-height: 1.45;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 288mm;
+        padding: 10mm 14mm 6mm;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .top {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12mm;
+        border-bottom: 1.4px solid #14171f;
+        padding-bottom: 4mm;
+      }
+
+      .name {
+        font-family: "Bahnschrift", "Segoe UI", sans-serif;
+        font-size: 28pt;
+        font-weight: 600;
+        letter-spacing: -1.4px;
+        line-height: 0.92;
+      }
+
+      .role {
+        margin-top: 2.4mm;
+        font-size: 7.4pt;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #4b5363;
+      }
+
+      .contact {
+        text-align: right;
+        font-size: 7.4pt;
+        line-height: 1.65;
+        color: #434a58;
+        min-width: 62mm;
+      }
+
+      .contact strong {
+        display: block;
+        color: #14171f;
+        font-size: 7.6pt;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        margin-bottom: 1mm;
+      }
+
+      .summary {
+        margin-top: 3mm;
+        display: grid;
+        grid-template-columns: 1fr 0.34fr;
+        gap: 8mm;
+        padding-bottom: 3mm;
+        border-bottom: 0.6px solid #d6d9e0;
+      }
+
+      .summary p {
+        margin: 0;
+        color: #3f4654;
+        max-width: 125mm;
+      }
+
+      .availability {
+        align-self: start;
+        border-left: 2px solid #1d4ed8;
+        padding-left: 3mm;
+        font-size: 7.2pt;
+        color: #3f4654;
+        line-height: 1.55;
+      }
+
+      .availability strong {
+        display: block;
+        color: #1d4ed8;
+        font-size: 7pt;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 0.8mm;
+      }
+
+      .body {
+        display: grid;
+        grid-template-columns: 1.9fr 1fr;
+        gap: 9mm;
+        margin-top: 4mm;
+      }
+
+      .label {
+        font-family: "Consolas", "Segoe UI", monospace;
+        font-size: 6.6pt;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        color: #7a8190;
+        margin: 0 0 2.2mm;
+      }
+
+      .section {
+        margin-bottom: 3.6mm;
+      }
+
+      .section:last-child {
+        margin-bottom: 0;
+      }
+
+      .job {
+        margin-bottom: 3.6mm;
+        break-inside: avoid;
+      }
+
+      .job:last-child {
+        margin-bottom: 0;
+      }
+
+      .job-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 3mm;
+      }
+
+      .job-title {
+        font-size: 9.1pt;
+        font-weight: 650;
+        letter-spacing: -0.15px;
+      }
+
+      .dates {
+        font-family: "Consolas", monospace;
+        font-size: 6.4pt;
+        letter-spacing: 0.5px;
+        color: #7a8190;
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+
+      .company {
+        color: #1d4ed8;
+        font-size: 7.8pt;
+        margin-top: 0.5mm;
+      }
+
+      .company span {
+        color: #6c7382;
+      }
+
+      ul {
+        margin: 1.3mm 0 0;
+        padding-left: 3.4mm;
+      }
+
+      li {
+        margin-bottom: 0.9mm;
+        color: #3f4654;
+      }
+
+      li::marker {
+        color: #1d4ed8;
+      }
+
+      .tags {
+        margin-top: 1.2mm;
+        font-family: "Consolas", monospace;
+        font-size: 6.2pt;
+        letter-spacing: 0.2px;
+        color: #7a8190;
+      }
+
+      .side-block {
+        border-top: 0.6px solid #d6d9e0;
+        padding-top: 2.6mm;
+        margin-top: 2.5mm;
+      }
+
+      .side-block:first-child {
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      .edu-title {
+        font-size: 8.4pt;
+        font-weight: 650;
+      }
+
+      .small {
+        font-size: 7.4pt;
+        color: #5b6270;
+        line-height: 1.5;
+      }
+
+      .muted {
+        color: #7a8190;
+      }
+
+      .skill-group {
+        margin-bottom: 1.6mm;
+      }
+
+      .skill-group strong {
+        display: block;
+        font-size: 7.3pt;
+        color: #14171f;
+        margin-bottom: 0.4mm;
+      }
+
+      .skill-group p {
+        margin: 0;
+        font-size: 6.9pt;
+        color: #5b6270;
+        line-height: 1.48;
+      }
+
+      .cert {
+        margin-bottom: 1.8mm;
+      }
+
+      .cert p {
+        margin: 0;
+      }
+
+      .cert .title {
+        font-size: 7.6pt;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      .cert .issuer {
+        font-size: 6.8pt;
+        color: #7a8190;
+        margin-top: 0.4mm;
+      }
+
+      .projects {
+        display: grid;
+        gap: 1.6mm;
+      }
+
+      .project .p-title {
+        display: flex;
+        justify-content: space-between;
+        gap: 2mm;
+        font-size: 7.7pt;
+        font-weight: 600;
+      }
+
+      .project .p-title span {
+        font-family: "Consolas", monospace;
+        font-size: 6.3pt;
+        color: #9aa0ad;
+        font-weight: 400;
+      }
+
+      .project p {
+        margin: 0.3mm 0 0;
+        font-size: 7.1pt;
+        color: #5b6270;
+        line-height: 1.48;
+      }
+
+      .project .stack {
+        font-family: "Consolas", monospace;
+        font-size: 6.1pt;
+        color: #9aa0ad;
+        margin-top: 0.4mm;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        margin-top: 2.4mm;
+        padding-top: 1.6mm;
+        border-top: 1px solid #14171f;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6mm;
+        font-family: "Consolas", monospace;
+        font-size: 6.2pt;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        color: #7a8190;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="top">
+        <div>
+          <div class="name">Nallamothu Srinath</div>
+          <div class="role">AI Intern · Frontend Developer · B.Tech Computer Science</div>
+        </div>
+        <div class="contact">
+          <strong>Contact</strong>
+          nallamothusrinath999@gmail.com<br />
+          linkedin.com/in/srinath2529<br />
+          github.com/srinath29-git<br />
+          Hyderabad, Telangana, India
+        </div>
+      </header>
+
+      <section class="summary">
+        <p>
+          B.Tech computer science student and AI intern building practical AI systems,
+          data-driven experiments, and considered web interfaces. Hands-on experience across
+          three 2026 internships — generative AI and IBM Cloud, applied Python AI systems, and
+          responsive frontend development. Interested in the layer where an intelligent system
+          becomes something a person can actually use.
+        </p>
+        <div class="availability">
+          <strong>Open to</strong>
+          AI &amp; software internships, frontend collaborations, and remote opportunities.
+          Available immediately for conversations.
+        </div>
+      </section>
+
+      <div class="body">
+        <div>
+          <section class="section">
+            <p class="label">Experience</p>
+
+            <div class="job">
+              <div class="job-head">
+                <span class="job-title">Artificial Intelligence Intern</span>
+                <span class="dates">Aug 2026 — Present</span>
+              </div>
+              <div class="company">
+                IBM SkillsBuild <span>· via Edunet Foundation · Hyderabad / Remote</span>
+              </div>
+              <ul>
+                <li>
+                  Selected for the four-week IBM SkillsBuild for University Engagements
+                  internship in AI &amp; IBM Cloud.
+                </li>
+                <li>
+                  Working with generative AI, LLMs, IBM Granite, agentic AI, IBM watsonx
+                  Orchestrate, RAG, Watson Machine Learning, and IBM Cloud.
+                </li>
+                <li>
+                  Building applied lab briefs: Nutrition Agent, Crop Recommendation System,
+                  RAG-based Recipe Generator, and College Admission Chatbot.
+                </li>
+              </ul>
+              <div class="tags">
+                Generative AI · IBM Granite · watsonx · RAG · IBM Cloud · Machine Learning
+              </div>
+            </div>
+
+            <div class="job">
+              <div class="job-head">
+                <span class="job-title">Frontend Developer</span>
+                <span class="dates">Jul — Aug 2026</span>
+              </div>
+              <div class="company">Decodelabs <span>· Remote</span></div>
+              <ul>
+                <li>
+                  Completed the DecodeLabs Virtual Internship Program in Frontend Development,
+                  building responsive layouts through real-world project work.
+                </li>
+                <li>
+                  Built a mobile-first landing page with responsive navigation, dark/light
+                  mode, animated statistics, FAQ accordion, glassmorphism, and CSS Grid/Flexbox.
+                </li>
+              </ul>
+              <div class="tags">HTML5 · CSS3 · JavaScript · Flexbox · CSS Grid · Responsive Design</div>
+            </div>
+
+            <div class="job">
+              <div class="job-head">
+                <span class="job-title">Artificial Intelligence Intern</span>
+                <span class="dates">Jul — Aug 2026</span>
+              </div>
+              <div class="company">Syntecxhub <span>· Remote</span></div>
+              <ul>
+                <li>
+                  Implemented an A* maze solver with a Manhattan-distance heuristic and
+                  Matplotlib visualisation.
+                </li>
+                <li>
+                  Built a forward-chaining rule-based expert system and a rule-based chatbot
+                  with intent matching, a knowledge base, and conversation logging.
+                </li>
+              </ul>
+              <div class="tags">Python · A* Search · Expert Systems · Rule-Based AI · SQL</div>
+            </div>
+          </section>
+
+          <section class="section">
+            <p class="label">Selected projects</p>
+            <div class="projects">
+              <div class="project">
+                <div class="p-title">AMIXY AI Core <span>2026</span></div>
+                <p>
+                  Multi-provider AI assistant with OpenAI and Gemini streaming, memory, and eight
+                  AI tools.
+                </p>
+                <div class="stack">React 19 · TypeScript · Convex · Tailwind 4 · OpenAI · Gemini</div>
+              </div>
+              <div class="project">
+                <div class="p-title">Applied AI Lab <span>2026</span></div>
+                <p>
+                  Four IBM SkillsBuild lab briefs spanning agentic AI, recommendation, RAG, and
+                  conversational assistance.
+                </p>
+                <div class="stack">IBM watsonx · Granite · RAG · IBM Cloud</div>
+              </div>
+              <div class="project">
+                <div class="p-title">Rule-Based Expert System <span>2026</span></div>
+                <p>
+                  A forward-chaining inference engine that turns symptoms into a diagnosis and
+                  shows every rule behind the result.
+                </p>
+                <div class="stack">Python · Knowledge Base · Inference Log</div>
+              </div>
+              <div class="project">
+                <div class="p-title">Responsive Web Layout <span>2026</span></div>
+                <p>
+                  A responsive DecodeLabs landing page with theme persistence, animated
+                  counters, FAQ accordion, and a mobile-first layout.
+                </p>
+                <div class="stack">HTML5 · CSS3 · JavaScript · CSS Grid</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <p class="label">Education</p>
+            <div class="job-head">
+              <span class="job-title">B.Tech, Computer Science</span>
+              <span class="dates">Sep 2025 — 2029</span>
+            </div>
+            <div class="company">Malla Reddy (MR) Deemed to be University <span>· Hyderabad</span></div>
+            <p class="small" style="margin: 1mm 0 0">
+              Focus: Data Science · Cloud Computing · Problem Solving · Communication
+            </p>
+          </section>
+        </div>
+
+        <aside>
+          <div class="side-block">
+            <p class="label">Core skills</p>
+            <div class="skill-group">
+              <strong>AI &amp; Machine Learning</strong>
+              <p>
+                Artificial Intelligence · Machine Learning · Data Science · IBM Watson ·
+                Prompt Engineering · Generative AI · RAG
+              </p>
+            </div>
+            <div class="skill-group">
+              <strong>Languages &amp; Data</strong>
+              <p>Python · Java · SQL · JavaScript · HTML5 · CSS3</p>
+            </div>
+            <div class="skill-group">
+              <strong>Cloud &amp; Security</strong>
+              <p>
+                IBM Cloud · Google Cloud Platform · BigQuery · Cloud Storage · IAM · Network
+                Security
+              </p>
+            </div>
+            <div class="skill-group">
+              <strong>Frontend &amp; Craft</strong>
+              <p>
+                Frontend Development · Responsive Design · Flexbox · CSS Grid · Problem
+                Solving · Communication
+              </p>
+            </div>
+          </div>
+
+          <div class="side-block">
+            <p class="label">Certifications</p>
+            <div class="cert">
+              <p class="title">Getting Started with Artificial Intelligence</p>
+              <p class="issuer">IBM · Credly verified · Aug 2026</p>
+            </div>
+            <div class="cert">
+              <p class="title">Google Cloud Computing Foundations Certificate</p>
+              <p class="issuer">Google Cloud · Credly verified · Jun 2026</p>
+            </div>
+          </div>
+
+          <div class="side-block">
+            <p class="label">Additional learning</p>
+            <p class="small">
+              Accenture Digital Skills: Artificial Intelligence — 91%<br />
+              Information Security, Saylor University — 46 hours<br />
+              Data Science for Everyone — Reliance Foundation<br />
+              QuizOff 2026 — participant, 5.25L+ students
+            </p>
+          </div>
+
+          <div class="side-block">
+            <p class="label">Links</p>
+            <p class="small">
+              LinkedIn: /in/srinath2529<br />
+              GitHub: /srinath29-git<br />
+              Portfolio: this site
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <span>References available on request</span>
+        <span>Nallamothu Srinath · Hyderabad, IN · 2026</span>
+      </footer>
+    </main>
+  </body>
+</html>

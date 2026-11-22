@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nallamothu Srinath — Portfolio</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #05060a;
+      }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #f2f5fd;
+        position: relative;
+      }
+      .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse 85% 80% at 55% 40%, black 15%, transparent 78%);
+        -webkit-mask-image: radial-gradient(ellipse 85% 80% at 55% 40%, black 15%, transparent 78%);
+      }
+      .glow-a {
+        position: absolute;
+        width: 760px;
+        height: 760px;
+        left: 570px;
+        top: -300px;
+        border-radius: 50%;
+        background: rgba(77, 141, 255, 0.32);
+        filter: blur(120px);
+      }
+      .glow-b {
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        left: -180px;
+        bottom: -300px;
+        border-radius: 50%;
+        background: rgba(139, 233, 255, 0.12);
+        filter: blur(100px);
+      }
+      .frame {
+        position: absolute;
+        inset: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 28px;
+        overflow: hidden;
+        background:
+          linear-gradient(150deg, rgba(13, 18, 32, 0.72), rgba(5, 7, 13, 0.4)),
+          rgba(5, 6, 10, 0.2);
+        backdrop-filter: blur(2px);
+      }
+      .content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        padding: 42px 46px 34px;
+        display: flex;
+        flex-direction: column;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding-bottom: 18px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .mark {
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-family: Consolas, monospace;
+        font-size: 12px;
+        letter-spacing: 1px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .brand-name {
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: -0.2px;
+      }
+      .brand-sub {
+        margin-top: 4px;
+        font-family: Consolas, monospace;
+        font-size: 9px;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .top-right {
+        text-align: right;
+        font-family: Consolas, monospace;
+        font-size: 9px;
+        letter-spacing: 2.2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.38);
+        line-height: 1.9;
+      }
+      .top-right strong {
+        color: rgba(255, 255, 255, 0.66);
+        font-weight: 500;
+      }
+      .main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 54px;
+        padding-top: 22px;
+      }
+      .headline {
+        max-width: 680px;
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: Consolas, monospace;
+        font-size: 10px;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #52e3a5;
+        box-shadow: 0 0 0 4px rgba(82, 227, 165, 0.12);
+      }
+      h1 {
+        margin: 24px 0 0;
+        font-family: "Bahnschrift", "Segoe UI", sans-serif;
+        font-size: 76px;
+        line-height: 0.9;
+        letter-spacing: -4px;
+        font-weight: 600;
+      }
+      h1 .sans {
+        display: block;
+        color: #f2f5fd;
+      }
+      h1 .serif {
+        display: block;
+        margin-top: 6px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-style: italic;
+        font-weight: 400;
+        letter-spacing: -2.4px;
+        color: #8be9ff;
+      }
+      h1 .fade {
+        color: rgba(255, 255, 255, 0.38);
+        font-family: "Bahnschrift", "Segoe UI", sans-serif;
+        font-style: normal;
+        letter-spacing: -4px;
+      }
+      .sub {
+        margin: 20px 0 0;
+        max-width: 480px;
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .tags {
+        display: flex;
+        gap: 8px;
+        margin-top: 22px;
+      }
+      .tag {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-family: Consolas, monospace;
+        font-size: 8.5px;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .tag.accent {
+        border-color: rgba(77, 141, 255, 0.45);
+        background: rgba(77, 141, 255, 0.12);
+        color: #bcd4ff;
+      }
+      .card-wrap {
+        position: relative;
+        width: 310px;
+        flex: none;
+      }
+      .orbit {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        inset: -50px;
+      }
+      .orbit.one {
+        inset: -18px;
+        border-style: dashed;
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+      .orbit.two {
+        inset: -64px;
+        border-color: rgba(77, 141, 255, 0.14);
+      }
+      .node {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #4d8dff;
+        box-shadow: 0 0 22px 6px rgba(77, 141, 255, 0.3);
+      }
+      .node.one {
+        top: -22px;
+        left: 50%;
+      }
+      .node.two {
+        bottom: 10px;
+        right: -60px;
+        width: 5px;
+        height: 5px;
+        background: #8be9ff;
+      }
+      .card {
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 22px;
+        background: rgba(10, 14, 26, 0.82);
+        padding: 22px;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+      }
+      .card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        padding-bottom: 12px;
+        font-family: Consolas, monospace;
+        font-size: 8px;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.36);
+      }
+      .live {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #52e3a5;
+      }
+      .live i {
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #52e3a5;
+      }
+      .card-body {
+        padding-top: 18px;
+      }
+      .role {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 1.14;
+        letter-spacing: -0.6px;
+      }
+      .org {
+        margin-top: 8px;
+        font-size: 11px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.46);
+      }
+      .meta {
+        margin-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.09);
+        padding-top: 14px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .meta label {
+        display: block;
+        font-family: Consolas, monospace;
+        font-size: 7px;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .meta span {
+        display: block;
+        margin-top: 4px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.72);
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-top: 15px;
+        font-family: Consolas, monospace;
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.36);
+      }
+      .bottom strong {
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+    <div class="glow-a"></div>
+    <div class="glow-b"></div>
+
+    <div class="frame">
+      <div class="content">
+        <div class="top">
+          <div class="brand">
+            <div class="mark">NS</div>
+            <div>
+              <div class="brand-name">Nallamothu Srinath</div>
+              <div class="brand-sub">AI × Data × Interface</div>
+            </div>
+          </div>
+          <div class="top-right">
+            <strong>Portfolio / 2026</strong><br />
+            Hyderabad, India
+          </div>
+        </div>
+
+        <div class="main">
+          <div class="headline">
+            <div class="eyebrow"><span class="dot"></span>Open to opportunities</div>
+            <h1>
+              <span class="sans">Intelligence,</span>
+              <span class="sans">engineered.</span>
+              <span class="serif">Interfaces, <span class="fade">felt.</span></span>
+            </h1>
+            <p class="sub">
+              AI intern and frontend developer building practical AI systems, data-driven
+              experiments, and web interfaces that make technology feel effortless.
+            </p>
+            <div class="tags">
+              <span class="tag accent">AI &amp; IBM Cloud Intern</span>
+              <span class="tag">Frontend</span>
+              <span class="tag">B.Tech CSE ’29</span>
+            </div>
+          </div>
+
+          <div class="card-wrap">
+            <span class="orbit two"></span>
+            <span class="orbit one"></span>
+            <span class="node one"></span>
+            <span class="node two"></span>
+            <div class="card">
+              <div class="card-head">
+                <span>Profile / 01</span>
+                <span class="live"><i></i>Live</span>
+              </div>
+              <div class="card-body">
+                <div class="role">AI &amp; IBM Cloud Intern</div>
+                <div class="org">IBM SkillsBuild<br />via Edunet Foundation</div>
+                <div class="meta">
+                  <div><label>Focus</label><span>AI × Interface</span></div>
+                  <div><label>Based in</label><span>Hyderabad, IN</span></div>
+                  <div><label>Studying</label><span>B.Tech CSE, 2029</span></div>
+                  <div><label>Status</label><span>Open to remote</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <span><strong>GitHub</strong> / srinath29-git</span>
+          <span>LinkedIn / srinath2529</span>
+          <span><strong>NS</strong> / 2026</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
