@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from "next";
 import {
   Bricolage_Grotesque,
@@ -44,56 +45,75 @@ const mono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+const seoTitle =
+  "Nallamothu Srinath | AI & Frontend Developer Portfolio";
+
+const seoDescription =
+  "Explore the portfolio of Nallamothu Srinath, an AI Intern and Frontend Developer from Hyderabad, India. Discover projects in artificial intelligence, machine learning, data science, Python and web development.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+
   title: {
-    default: siteConfig.title,
-    template: `%s — ${profile.name}`,
+    default: seoTitle,
+    template: `%s | Nallamothu Srinath`,
   },
-  description: siteConfig.description,
-  applicationName: `${profile.name} Portfolio`,
+
+  description: seoDescription,
+
+  applicationName: "Nallamothu Srinath Portfolio",
   authors: [{ name: profile.name, url: profile.linkedin }],
   creator: profile.name,
   publisher: profile.name,
-    verification: {
+
+  verification: {
     google: "R0_tpfMGpYmfz8GCNpfiMvecCtPz-NKVOxWaW2WObJA",
   },
+
   keywords: [
     "Nallamothu Srinath",
-    "Srinath portfolio",
-    "AI intern",
-    "frontend developer",
-    "machine learning",
-    "data science",
-    "IBM SkillsBuild",
-    "Hyderabad developer",
-    "B.Tech computer science",
+    "Nallamothu Srinath portfolio",
+    "Srinath AI developer",
+    "Srinath frontend developer",
+    "AI intern Hyderabad",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Data Science",
+    "Frontend Development",
+    "Python Developer",
+    "Java Developer",
+    "Web Development",
+    "B.Tech Computer Science",
   ],
+
   alternates: {
     canonical: "/",
   },
+
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
     url: "/",
-    siteName: `${profile.name} — Portfolio`,
-    title: siteConfig.title,
-    description: siteConfig.description,
+    siteName: "Nallamothu Srinath Portfolio",
+    title: seoTitle,
+    description: seoDescription,
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${profile.name} — AI, data and interface engineering`,
+        alt: "Nallamothu Srinath - AI and Frontend Developer Portfolio",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: seoTitle,
+    description: seoDescription,
     images: ["/og.png"],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -105,7 +125,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
   category: "technology",
+
   formatDetection: {
     email: false,
     address: false,
@@ -131,22 +153,29 @@ const personSchema = {
   url: siteConfig.url,
   email: `mailto:${profile.email}`,
   jobTitle: "Artificial Intelligence Intern & Frontend Developer",
-  description: profile.heroIntro,
+  description: seoDescription,
+
   address: {
     "@type": "PostalAddress",
     addressLocality: "Hyderabad",
     addressRegion: "Telangana",
     addressCountry: "IN",
   },
+
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "Malla Reddy (MR) Deemed to be University",
   },
+
   worksFor: {
     "@type": "Organization",
     name: "IBM SkillsBuild (via Edunet Foundation)",
   },
-  sameAs: socials.filter((social) => social.icon !== "mail").map((social) => social.href),
+
+  sameAs: socials
+    .filter((social) => social.icon !== "mail")
+    .map((social) => social.href),
+
   knowsAbout: [
     "Artificial Intelligence",
     "Machine Learning",
@@ -156,6 +185,7 @@ const personSchema = {
     "Java",
     "SQL",
     "Cloud Computing",
+    "Web Development",
   ],
 };
 
@@ -171,17 +201,23 @@ export default function RootLayout({
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
         />
+
         <Providers>
           <a href="#main" className="skip-link">
             Skip to content
           </a>
+
           <IntroLoader />
           <CustomCursor />
           <ScrollProgress />
           <Navbar />
+
           <main id="main">{children}</main>
+
           <Footer />
           <CommandPalette />
           <Concierge />
